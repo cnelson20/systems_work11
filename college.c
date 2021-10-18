@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "college.h"
 
-struct college *generate_college(char *n, char *place,int body, int div) {
+struct college *make_college(char *n, char *place,int body, int div) {
   struct college *u = malloc(sizeof(struct college));
   u->name = malloc(strlen(n)+1);
   strcpy(u->name,n);
@@ -28,7 +29,7 @@ void print_list(struct college *c) {
   }
 }
 struct college *insert_front(struct college *head, char *n, char *place,int body, int div) {
-  struct college *new = generate_college(n,place,body,div);
+  struct college *new = make_college(n,place,body,div);
   new->next = head;
   return new;
 }
