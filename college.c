@@ -39,5 +39,5 @@ struct college *free_list(struct college *c) {
   }
   free_college(c);
   
-  return c;
+  return NULL;
 }
